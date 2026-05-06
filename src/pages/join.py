@@ -1,6 +1,25 @@
 import pandas as pd
 import streamlit as st
 
+st.markdown(
+    """
+    <style>
+        /* Make the main content area wider */
+        .block-container {
+            max-width: 70%;
+            padding-top: 2rem;
+        }
+
+        /* Make the Sidebar Logo larger */
+        [data-testid="stSidebarHeader"] img {
+            max-height: 100px; /* Adjust height as needed */
+            width: auto;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("Join SCLA")
 
 join_info = """SCLA is the state’s premier library association. We are a group of librarians, library staff members, and library supporters working together to advocate for and improve library services in South Carolina. If you’re visiting this site, you must care about libraries, and that means **SCLA is for you!**"""

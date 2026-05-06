@@ -1,6 +1,25 @@
 import pandas as pd
 import streamlit as st
 
+st.markdown(
+    """
+    <style>
+        /* Make the main content area wider */
+        .block-container {
+            max-width: 70%;
+            padding-top: 2rem;
+        }
+
+        /* Make the Sidebar Logo larger */
+        [data-testid="stSidebarHeader"] img {
+            max-height: 100px; /* Adjust height as needed */
+            width: auto;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("History of the association")
 
 history_text = """On October 27, 1915, fourteen librarians and library supporters met in the University of South Carolina Library in response to an invitation from Robert M. Kennedy published the previous day in The State newspaper. Those present voted unanimously to establish the South Carolina Library Association, the purposes of which would be "to arouse and stimulate an interest in the development of libraries, to be a medium of information in (that) regard..., and to bring into touch her library force that they may gather additional strength and inspiration for the work."""

@@ -1,6 +1,25 @@
 import pandas as pd
 import streamlit as st
 
+st.markdown(
+    """
+    <style>
+        /* Make the main content area wider */
+        .block-container {
+            max-width: 70%;
+            padding-top: 2rem;
+        }
+
+        /* Make the Sidebar Logo larger */
+        [data-testid="stSidebarHeader"] img {
+            max-height: 100px; /* Adjust height as needed */
+            width: auto;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("Executive officers")
 
 officers_table = [
