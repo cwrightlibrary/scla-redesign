@@ -8,7 +8,10 @@ username = login_form.text_input(
     "Username", placeholder="your@email.com", icon=":material/account_circle:"
 )
 password = login_form.text_input(
-    "Password", type="password", placeholder="********************", icon=":material/key_vertical:"
+    "Password",
+    type="password",
+    placeholder="********************",
+    icon=":material/key_vertical:",
 )
 
 col1, col2 = login_form.columns([1, 4])

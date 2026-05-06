@@ -11,7 +11,9 @@ st.logo(sidebar_logo, icon_image=main_body_logo, size="large")
 # --- HOME ---
 home_page = st.Page("src/pages/home.py", title="Home", icon=":material/home:")
 login_page = st.Page("src/pages/login.py", title="Login", icon=":material/login:")
-join_page = st.Page("src/pages/join.py", title="Join SCLA", icon=":material/person_add:")
+join_page = st.Page(
+    "src/pages/join.py", title="Join SCLA", icon=":material/person_add:"
+)
 
 # --- ABOUT (SCLA) ---
 about_page = st.Page(
