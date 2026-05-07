@@ -51,3 +51,14 @@ def verify_user(username: str, password: str, admin_level: int = 0):
         if bcrypt.checkpw(password.encode("utf-8"), stored_hash):
             return True, admin_level
     return False, None
+
+def get_profile(username: str):
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT full_name, username FROM users WHERE username = ?", (username,))
+    result = cursor.fetchone()
+    conn.close()
+
+    if result:
+        return result
+    return None

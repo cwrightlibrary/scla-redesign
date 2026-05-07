@@ -1,9 +1,10 @@
+import pandas as pd
 import streamlit as st
 import src.helpers.setup_database as db
 
-st.title("Login")
+st.title("Your Account")
 
-login_tab, signup_tab = st.tabs(["Login", "Sign Up"])
+login_tab, signup_tab, account_tab = st.tabs(["Login", "Sign Up", "Account"])
 
 if not st.session_state.logged_in:
     login_form = login_tab.form(key="login_form")
@@ -26,12 +27,16 @@ if not st.session_state.logged_in:
         is_admin = 1 if admin_login else 0
         login_verified, admin_level = db.verify_user(email, password, is_admin)
         if login_verified:
-            st.success("Logged in successfully!") if admin_level == 0 else st.success("Logged in as admin!")
+            st.success("Logged in successfully!") if admin_level == 0 else st.success(
+                "Logged in as admin!"
+            )
             if admin_level and admin_level > 0:
                 st.session_state.admin = True
-            
+
             st.session_state.username = email
             st.session_state.logged_in = True
+            st.session_state.full_name = db.get_profile(email)
+            st.session_state.login_text = "Your Account"
             st.rerun()
         else:
             st.error("Issue with login")
@@ -40,6 +45,8 @@ else:
         st.session_state.admin = False
         st.session_state.username = ""
         st.session_state.logged_in = False
+        st.session_state.full_name = ""
+        st.session_state.login_text = "Log In"
         st.rerun()
 
 if not st.session_state.logged_in:
@@ -67,10 +74,7 @@ if not st.session_state.logged_in:
         key="signup_verify",
     )
 
-    submit_signup_button = signup_form.form_submit_button(
-        "Sign Up",
-        type="primary"
-    )
+    submit_signup_button = signup_form.form_submit_button("Sign Up", type="primary")
 
     if submit_signup_button:
         if not signup_password or not verify_password:
@@ -87,3 +91,16 @@ if not st.session_state.logged_in:
                 admin_level=admin_level,
             )
             st.success("Account created successfully!")
+
+with account_tab:
+    if st.session_state.logged_in:
+        st.header(st.session_state.login_text)
+        with st.container(border=True):
+            st.subheader("Information")
+            user_name, user_email = st.session_state.full_name
+            st.table(
+                pd.DataFrame([(user_name, user_email)], columns=["Name", "Email"]),
+                border="horizontal",
+            )
+    else:
+        st.warning(":material/warning: You are not signed in")

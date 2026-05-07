@@ -8,11 +8,17 @@ db.initialize_db()
 if "username" not in st.session_state:
     st.session_state.username = ""
 
+if "full_name" not in st.session_state:
+    st.session_state.full_name = ""
+
 if "admin" not in st.session_state:
     st.session_state.admin = False
 
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
+
+if "login_text" not in st.session_state:
+    st.session_state.login_text = "Log In"
 
 sidebar_logo = "src/images/redesign.png"
 main_body_logo = "src/images/redesign_small.png"
@@ -21,7 +27,7 @@ st.logo(sidebar_logo, icon_image=main_body_logo, size="large")
 
 # --- HOME ---
 home_page = st.Page("src/pages/home.py", title="Home", icon=":material/home:")
-login_page = st.Page("src/pages/login.py", title="Login", icon=":material/login:")
+account_page = st.Page("src/pages/login.py", title=st.session_state.login_text, icon=":material/login:")
 join_page = st.Page(
     "src/pages/join.py", title="Join SCLA", icon=":material/person_add:"
 )
@@ -62,7 +68,7 @@ committees_page = st.Page(
 )
 
 pages = {
-    "": [home_page, login_page, join_page],
+    "": [home_page, account_page, join_page],
     "SCLA": [about_page, history_of_the_association_page, executive_officers_page],
     "Organization": [
         about_org_page,
