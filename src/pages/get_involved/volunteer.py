@@ -1,5 +1,33 @@
 import streamlit as st
 
+st.markdown(
+    """
+    <style>
+        /* Only apply these rules to screens wider than 768px (Desktops/Laptops) */
+        @media (min-width: 768px) {
+            /* Make the main content area wider */
+            .block-container {
+                max-width: 70%;
+                padding-top: 2rem;
+            }
+
+            /* Make the Sidebar Logo larger */
+            [data-testid="stSidebarHeader"] img {
+                max-height: 100px;
+                width: auto;
+            }
+        }
+        
+        /* Optional: CSS for all screens (Headers) */
+        @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Darumadrop One', cursive;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.title("Volunteer")
 
 st.write("There are many opportunities for leadership and participation in SCLA! Consider putting your talents and skills to work for the Association in one of these categories:")

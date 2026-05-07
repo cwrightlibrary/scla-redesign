@@ -20,6 +20,7 @@ if "logged_in" not in st.session_state:
 if "login_text" not in st.session_state:
     st.session_state.login_text = "Log In"
 
+
 sidebar_logo = "src/images/redesign.png"
 main_body_logo = "src/images/redesign_small.png"
 
