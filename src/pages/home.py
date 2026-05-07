@@ -66,7 +66,7 @@ st.divider()
 
 join_col, login_col = st.columns([1, 3])
 
-join_col.page_link("src/pages/join.py", icon=":material/person_add:")
+join_col.page_link("src/pages/about/join.py", icon=":material/person_add:")
 login_col.page_link("src/pages/login.py", icon=":material/login:")
 
 join_text = """:material/info: Not yet a member of the South Carolina Library Association? Becoming a member is a great way to stay connected with the library community across the state, access professional development opportunities, and receive updates about the annual conference and other SCLA events."""
