@@ -22,7 +22,7 @@ if not st.session_state.logged_in:
     stay_logged_in = col1.checkbox("Stay logged in")
     admin_login = col2.checkbox("Admin")
 
-    if login_form.form_submit_button("Login"):
+    if login_form.form_submit_button("Login", type="primary"):
         is_admin = 1 if admin_login else 0
         login_verified, admin_level = db.verify_user(email, password, is_admin)
         if login_verified:

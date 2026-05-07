@@ -103,6 +103,7 @@ with st.expander("Announcements"):
     st.link_button(
         "Register Now",
         "https://docs.google.com/forms/d/e/1FAIpQLSdUDV3ndewvO0OkgMBXuMC277DILLNvVZNTGg1R6RkN0yRwNA/viewform?usp=header",
+        type="primary"
     )
 
 with st.expander("Support SCLA at Kroger"):

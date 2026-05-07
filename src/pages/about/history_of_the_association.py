@@ -38,6 +38,7 @@ st.link_button(
     "A South Carolina Library Association: Advocate for Libraries",
     "http://www.libsci.sc.edu/histories/sclahistory/scla.htm",
     help="A history of the association from 1915-1990 by Roger Hux, published in 1990",
+    type="primary"
 )
 
 dates_data_table = {
