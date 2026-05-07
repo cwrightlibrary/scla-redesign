@@ -28,13 +28,14 @@ st.logo(sidebar_logo, icon_image=main_body_logo, size="large")
 # --- HOME ---
 home_page = st.Page("src/pages/home.py", title="Home", icon=":material/home:")
 account_page = st.Page("src/pages/login.py", title=st.session_state.login_text, icon=":material/login:")
-join_page = st.Page(
-    "src/pages/join.py", title="Join SCLA", icon=":material/person_add:"
-)
+jobs_page = st.Page("src/pages/jobs.py", title="Jobs", icon=":material/business_center:")
 
 # --- ABOUT (SCLA) ---
 about_page = st.Page(
     "src/pages/about/about.py", title="About SCLA", icon=":material/info:"
+)
+join_page = st.Page(
+    "src/pages/about/join.py", title="Join SCLA", icon=":material/person_add:"
 )
 history_of_the_association_page = st.Page(
     "src/pages/about/history_of_the_association.py",
@@ -45,6 +46,21 @@ executive_officers_page = st.Page(
     "src/pages/about/executive_officers.py",
     title="Executive Officers",
     icon=":material/work:",
+)
+meetings_page = st.Page(
+    "src/pages/about/meetings.py",
+    title="Meetings",
+    icon=":material/meeting_room:"
+)
+libraries_journal_page = st.Page(
+    "src/pages/about/libraries_journal.py",
+    title="Libraries Journal",
+    icon=":material/book_5:"
+)
+contact_page = st.Page(
+    "src/pages/about/contact.py",
+    title="Contact Us",
+    icon=":material/contact_support:"
 )
 
 # --- ORGANIZATION ---
@@ -67,15 +83,28 @@ committees_page = st.Page(
     icon=":material/diversity_2:",
 )
 
+# --- GET INVOLVED ---
+awards_page = st.Page(
+    "src/pages/get_involved/awards.py",
+    title="Awards",
+    icon=":material/editor_choice:"
+)
+volunteer_page = st.Page(
+    "src/pages/get_involved/volunteer.py",
+    title="Volunteer",
+    icon=":material/hand_gesture:"
+)
+
 pages = {
-    "": [home_page, account_page, join_page],
-    "SCLA": [about_page, history_of_the_association_page, executive_officers_page],
+    "": [home_page, account_page, jobs_page],
+    "SCLA": [about_page, join_page, history_of_the_association_page, executive_officers_page, meetings_page, libraries_journal_page, contact_page],
     "Organization": [
         about_org_page,
         sections_page,
         round_tables_page,
         committees_page,
     ],
+    "Get Involved": [awards_page, volunteer_page],
 }
 
 # --- ADMIN ---
