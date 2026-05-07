@@ -246,17 +246,99 @@ with st.expander("Rainbow Round Table"):
         )
         st.table(rainbow_resources_df, border="horizontal")
 
-with st.expander("Government Documents"):
-    st.header("Government Documents")
+with st.expander("Government Documents Round Table"):
+    st.header("Government Documents Round Table")
+    st.write("The purpose of this Round Table is to further the collection, organization, and use of federal, state and local government publications by documents librarians and librarians with other fields of interest.")
 
-with st.expander("Information Literacy"):
-    st.header("Information Literacy")
+    gov_docs_list = """- Connect with GODORT: Visit or subscribe to the blog at http://sclagodort.blogspot.com\n- Visit www.gpo.gov for the latest Government Printing Office news\n- Visit www.fdlp.gov for Federal Depository Library Guidelines"""
+    st.markdown(gov_docs_list)
 
-with st.expander("Library Marketing and Outreach"):
-    st.header("Library Marketing and Outreach")
+    st.subheader("2025 Officers")
+    gov_docs_table = [
+        ("Candace Moorer", "Chair", "cmoorer@citadel.edu"),
+        ("Bernadette J. Johnson", "Vice-Chair", "bjjohnson@fmarion.edu"),
+        ("Beka D. Groller", "Secretary", "rgroller@statelibrary.sc.gov")
+    ]
+    gov_docs_df = pd.DataFrame(gov_docs_table, columns=["Name", "Title", "Email"])
+    st.table(gov_docs_df, border="horizontal")
 
-with st.expander("New Members"):
-    st.header("New Members")
+with st.expander("Information Literacy Round Table"):
+    st.header("Information Literacy Round Table")
 
-with st.expander("Paraprofessional"):
-    st.header("Paraprofessional")
+    st.link_button("iTeach 5: iSpeak, iPresent, iTalk", "https://www.scla.org/iteach-5")
+    st.link_button("iTeach 4: Transitions and the Roles Libraries Play", "http://www.scla.org/iteach4")
+
+    info_lit_list = """**ILeRT! Newsletter:**\n\n- [Spring 2017](https://www.scla.org/assets/docs/ilert%20spring%202017.pdf)\n- [Fall 2016](https://www.scla.org/assets/docs/ilert%20fall%202016.pdf)\n- [Spring 2016](https://www.scla.org/assets/docs/ILeRT%20Spring%202016.pdf)\n- [Fall 2015](https://www.scla.org/assets/docs/ILeRT%20Fall%202015.pdf)\n- [Spring 2015](https://www.scla.org/assets/docs/ILeRT%20Spring%202015.pdf)\n- [September 2014](https://www.scla.org/assets/docs/ILeRT_v1i2.pdf)\n- [March 2014](https://www.scla.org/assets/docs/ILeRT_v1i1.pdf)"""
+    st.markdown(info_lit_list)
+
+with st.expander("Library Marketing and Outreach Round Table"):
+    st.header("Library Marketing and Outreach Round Table")
+
+    st.write("""The objective of the Library Marketing and Outreach Round Table shall be to provide a forum for discussion regarding effective digital and print methods, including, but not limited to social media, flyers, etc. to disseminate information about the value of their respective libraries in South Carolina, and the services and events they offer and to work for the objectives of the South Carolina Library Association.
+
+The South Carolina Library Association’s Marketing Outreach Round Table relaunched in June 2025. Since then, we have met monthly to discuss various methods of marketing, outreach, and promotion for library resources. We have also created a blog titled The Mort, which is shared monthly with SCLA members. Each issue of The Mort features an article about our discussions, offering members ideas and inspiration to promote their libraries. You can find the link to the blog below.""")
+    st.link_button("The MORT Blog", "https://themortforlibraries.blogspot.com/")
+
+    st.subheader("2026 Officers")
+    lib_mark_officers_table = [
+        ("Tiffany Williams", "Chair", "williamst@ccpl.org")
+    ]
+    lib_mark_officers_df = pd.DataFrame(lib_mark_officers_table, columns=["Name", "Title", "Email"])
+    st.table(lib_mark_officers_df, border="horizontal")
+
+    st.subheader("SCLA-LMO-RT Listserv")
+    st.write("The South Carolina Library Association Library and Marketing Outreach Round Table has a moderated forum for communication among libraries. SCLA-LMO-RT listserv is used for Library Marketing and Outreach announcements, discussions, or just general questions about marketing, outreach, social media, displays, and more. ")
+
+    st.subheader("To join")
+    lib_mark_join = """- Login at www.scla.org\n- Select *My Community*\n- Hover over the **My Features** tab\n- Click on E-Lists\n- Select Subscribed as "On" next to the NAME of the listserv (SCLA_LMO) and select "On" for Email Delivery"""
+    st.markdown(lib_mark_join)
+
+    st.subheader("To post a message to the list")
+    lib_mark_post = """- Send an email to scla_lmo@scala.memberclicks.net\n- "By default, replies to messages from the list go to all subscribers to the list, not just the original sender"""
+    st.markdown(lib_mark_post)
+
+    st.subheader("Upcoming Meetings and Trainings")
+    lib_mark_meetings_table = [
+        ("Thursday, April 23", "2:00 pm EST"),
+        ("Thursday, May 28", "2:00 pm EST"),
+        ("Thursday, July 23", "2:00 pm EST"),
+        ("Thursday, September 24", "2:00 pm EST"),
+        ("Thursday, October 22", "2:00 pm EST")
+    ]
+    lib_mark_meetings_df = pd.DataFrame(lib_mark_meetings_table, columns=["Date", "Time"])
+    st.table(lib_mark_meetings_df, border="horizontal")
+
+with st.expander("New Members Round Table"):
+    st.header("New Members Round Table")
+
+    st.write("The New Members Round Table provides a place for South Carolina Library Association's newer members to develop professionally, establish relationships with other library staff from across the state, and learn about opportunities for service within the association. Membership in the NMRT is available to SCLA members who have worked less than five years in South Carolina.")
+
+    st.subheader("What is our NMRT about?")
+    st.markdown("""We can...\n\n- learn from each other\n- learn from our more experienced libraries\n- find our own place to plug into SCLA\n- grow as professionals and as leaders within our libraries and communities, as well as in our state and national associations""")
+
+    st.subheader("2026 Officers")
+
+    st.table(pd.DataFrame([
+        ("Jennifer Jean", "Chair", "jjean@statelibrary.sc.gov")
+    ], columns=["Name", "Title", "Email"]), border="horizontal")
+
+    st.write("We are currently looking to fill these roles. If you are interested in serving as Chair, Vice Chair, or Secretary for the NMRT, please email Jennifer Jean.")
+
+    st.subheader("Upcoming Meetings and Trainings")
+    st.write("TBD")
+
+with st.expander("Paraprofessional Round Table"):
+    st.header("Paraprofessional Round Table")
+
+    st.write("The purpose of the Paraprofessional Round Table is to provide opportunities for paraprofessionals to meet regularly and exchange ideas. The Section seeks to offer workshops that encourage paraprofessional development as well as cooperation among its members in order to promote excellent library service. Specific objectives include the following:")
+    st.markdown("""- To promote the recruitment and retention of library paraprofessionals in all types of libraries.\n- To sponsor workshops that address topics of interest to library paraprofessionals.\n- To investigate the possibility of establishing a library paraprofessional continuing education program within the state.\n- To offer financial aid to library paraprofessionals who wish to further their education.\n- To ensure that paraprofessionals among the state's libraries be recognized and affirmed. """)
+
+    st.subheader("Workshop")
+    st.write("Unfortunately the 2019 Paraprofessional Round Table event has been **canceled**. We look forward to seeing everyone at the annual conference in October. ")
+
+    st.divider()
+
+    st.link_button("Paraprofessional Round Table Information Flyer", "https://www.scla.org/assets/docs/PPRT_Flyer_2019.pdf")
+    st.subheader("What's Poppin' with the Paraprofessionals Newsletter ")
+
+    st.markdown("""- [April 2018](https://www.scla.org/assets/docs/What's%20Poppin%20April%202018.pdf)\n- [April 2017](https://www.scla.org/assets/docs/SCLA%20PPRT%20April%202017%20Newsletter.pdf)\n- [October 2016](https://scala.memberclicks.net/assets/docs/ppsclanewsletter_october2016.pdf)\n- [April 2016](https://scala.memberclicks.net/assets/docs/SCLA_PP_Newsletter.pdf)""")
