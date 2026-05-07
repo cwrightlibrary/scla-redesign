@@ -5,6 +5,15 @@ import src.helpers.setup_database as db
 st.set_page_config()
 db.initialize_db()
 
+if "username" not in st.session_state:
+    st.session_state.username = ""
+
+if "admin" not in st.session_state:
+    st.session_state.admin = False
+
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
 sidebar_logo = "src/images/redesign.png"
 main_body_logo = "src/images/redesign_small.png"
 
@@ -52,17 +61,28 @@ committees_page = st.Page(
     icon=":material/diversity_2:",
 )
 
+pages = {
+    "": [home_page, login_page, join_page],
+    "SCLA": [about_page, history_of_the_association_page, executive_officers_page],
+    "Organization": [
+        about_org_page,
+        sections_page,
+        round_tables_page,
+        committees_page,
+    ],
+}
+
+# --- ADMIN ---
+if st.session_state.admin:
+    add_to_home_page = st.Page(
+        "src/pages/admin/admin.py",
+        title="Add to Home",
+        icon=":material/shield_person:"
+    )
+    pages["Admin"] = [add_to_home_page]
+
 pg = st.navigation(
-    {
-        "": [home_page, login_page, join_page],
-        "SCLA": [about_page, history_of_the_association_page, executive_officers_page],
-        "Organization": [
-            about_org_page,
-            sections_page,
-            round_tables_page,
-            committees_page,
-        ],
-    },
+    pages,
     position="top",
 )
 
