@@ -95,6 +95,18 @@ volunteer_page = st.Page(
     title="Volunteer",
     icon=":material/hand_gesture:"
 )
+donate_page = st.Page(
+    "src/pages/get_involved/donate.py",
+    title="Donate to SCLA",
+    icon=":material/credit_card:"
+)
+
+# --- CONFERENCE ---
+conference_info_page = st.Page(
+    "src/pages/conference/registration.py",
+    title="Information",
+    icon=":material/info:"
+)
 
 pages = {
     "": [home_page, account_page, jobs_page],
@@ -105,7 +117,8 @@ pages = {
         round_tables_page,
         committees_page,
     ],
-    "Get Involved": [awards_page, volunteer_page],
+    "Get Involved": [awards_page, volunteer_page, donate_page],
+    "Conference": [conference_info_page],
 }
 
 # --- ADMIN ---
