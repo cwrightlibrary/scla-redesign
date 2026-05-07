@@ -31,7 +31,7 @@ st.markdown(
 
 st.title("Committees")
 
-with st.expander("Advocacy Committee"):
+with st.expander("Advocacy Committee", expanded=True):
     st.header("Advocacy Committee")
 
     st.subheader("Important Advocacy Links")

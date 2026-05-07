@@ -31,7 +31,7 @@ st.markdown(
 
 st.title("Job Listings")
 st.write("The SCLA Job Listings is a list of job announcements for any type of library within South Carolina and the Southeast.")
-st.link_button("Submit Job", "https://scala.memberclicks.net/index.php?option=com_mcform&view=form&id=20061", help="Read the job posting guidelines and submit a new job announcement")
+st.link_button("Submit Job", "https://scala.memberclicks.net/index.php?option=com_mcform&view=form&id=20061", help="Read the job posting guidelines and submit a new job announcement", type="primary")
 
 with st.expander("Innovative Technologies Librarian (Spartanburg, SC)"):
     st.header("Innovative Technologies Librarian (Spartanburg, SC)")

@@ -34,7 +34,7 @@ st.title("Join SCLA")
 join_info = """SCLA is the state’s premier library association. We are a group of librarians, library staff members, and library supporters working together to advocate for and improve library services in South Carolina. If you’re visiting this site, you must care about libraries, and that means **SCLA is for you!**"""
 st.markdown(join_info)
 
-with st.expander("Individual Memberships"):
+with st.expander("Individual Memberships", expanded=True):
     st.header("Individual Memberships")
     membership_info = """**As a member, you will benefit from:**\n\n- advocacy efforts on behalf of South Carolina libraries and library staff\n- leadership and professional development opportunities\n- partnerships and collaboration with library leaders from across our state\n- reduced registration fees for attendance at our outstanding annual conference"""
     st.markdown(membership_info)

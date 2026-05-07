@@ -31,7 +31,7 @@ st.markdown(
 
 st.title("Sections")
 
-with st.expander("College and University Section"):
+with st.expander("College and University Section", expanded=True):
     st.header("College and University Section")
     college_uni_info = """It is the purpose of the College and University Section to serve persons interested in all aspects of academic libraries. Its objective is to stimulate and support high standards of library service in colleges and universities. It encourages professional growth through attendance at professional meetings, promotion of communication and exchange of ideas among its members, continuing education opportunities, and dissemination of publications of professional interest to its membership. It represents academic library concerns to other Sections within the SCLA as well as to groups and persons outside the Association."""
 

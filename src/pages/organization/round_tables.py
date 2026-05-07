@@ -31,7 +31,7 @@ st.markdown(
 
 st.title("Round Tables")
 
-with st.expander("Round Table for African American Concerns"):
+with st.expander("Round Table for African American Concerns", expanded=True):
     st.header("Round Table for African American Concerns")
     st.write(
         "The purpose of the Round Table for African American Concerns (RAAC) is to promote the recruitment and retention of minority librarians in South Carolina, support and facilitate library services which will meet the information needs of minorities, encourage dissemination of information resources about minority people to the larger community, provide a mechanism that would encourage minority librarians to participate in local, state, and national associations, and promote libraries as viable institutions in minority communities."
