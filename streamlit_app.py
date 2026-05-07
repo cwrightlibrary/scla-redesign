@@ -1,7 +1,9 @@
 import streamlit as st
+import src.helpers.setup_database as db
 
 # --- CONFIG ---
 st.set_page_config()
+db.initialize_db()
 
 sidebar_logo = "src/images/redesign.png"
 main_body_logo = "src/images/redesign_small.png"
